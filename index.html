@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha1.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha1.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha256.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha512.js"></script>
+
+	
+	<script src="script.js"></script>
+  </head>
+
+  <body ng-controller="PruebaController">
+   <select name="mySelect" id="mySelect"
+      ng-options="option.name for option in data.availableOptions track by option.id"
+      ng-model="data.selectedOption"></select>
+    Contrase&ntilde;a:<input ng-model="password" />
+    <br>
+    El hash de la contrase&ntilde;a es:
+    <br>
+    {{getHash()}}
+	<br>
+	Con el algoritmo {{data.selectedOption.name}}
+  </body>
+</html>
